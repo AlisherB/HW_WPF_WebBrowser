@@ -5,10 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HW_WPF_WebBrowser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <WebBrowser x:Name="webBrowser" Source="">
-            
-        </WebBrowser>
-    </Grid>
+        Title="Мой браузер" Height="640" Width="1024" MinWidth="1024" MinHeight="640" >
+    <DockPanel LastChildFill="True">
+        <ToolBar DockPanel.Dock="Top" Margin="0" Width="auto" Height="30" VerticalAlignment="Top">
+            <Button Name="backButton" Margin="0 0 5 0" Click="BackButton_Click">
+                <Image Source="back.png" Height="16" />
+                <Button.ToolTip>
+                    <ToolTip Content="Назад"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Name="nextButton" Margin="0 0 5 0" Click="NextButton_Click">
+                <Image Source="next.png" Height="16" />
+                <Button.ToolTip>
+                    <ToolTip Content="Вперед"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Name="updateButton"  Margin="0 0 5 0" VerticalAlignment="Top" Click="UpdateButton_Click">
+                <Image Source="update.png" Height="18"/>
+                <Button.ToolTip>
+                    <ToolTip Content="Обновить страницу"/>
+                </Button.ToolTip>
+            </Button>
+            <TextBox Width="865" Name="urlTextBox" KeyDown="UrlTextBox_KeyDown" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button Name="searchButton" Margin="5 0 5 0" HorizontalAlignment="Right" Click="SearchButton_Click">
+                <Image Source="search.png" Width="18" Height="18"/>
+            </Button>
+        </ToolBar>
+        <WebBrowser Name="webBrowser" />
+    </DockPanel>
+    
 </Window>
