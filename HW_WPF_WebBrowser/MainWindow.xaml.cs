@@ -72,7 +72,6 @@ namespace HW_WPF_WebBrowser
                 UpdateButton_Click(sender, e);
                 urlTextBox.Text = webBrowser.Source.ToString();
             }
-            
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
@@ -88,9 +87,19 @@ namespace HW_WPF_WebBrowser
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             webBrowser.Refresh();
-            //urlTextBox.Text = webBrowser.Source.ToString();
+            urlTextBox.Text = webBrowser.Source.ToString();
         }
 
-        
+        private void MailMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            webBrowser.Source = new Uri("https://www.mail.ru/");
+            urlTextBox.Text = webBrowser.Source.ToString();
+        }
+
+        private void GoogleMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            webBrowser.Source = new Uri("https://www.google.kz/");
+            urlTextBox.Text = webBrowser.Source.ToString();
+        }
     }
 }

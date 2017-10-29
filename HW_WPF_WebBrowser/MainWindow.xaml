@@ -31,7 +31,16 @@
                 <Image Source="search.png" Width="18" Height="18"/>
             </Button>
         </ToolBar>
+        <Menu Name="favoritesMenu" DockPanel.Dock="Top" Height="30" Background="LightGray">
+            <Menu.ContextMenu>
+                <ContextMenu Name="contextMenu">
+                    <MenuItem x:Name="addMenuItem" Header="Добавить страницу" Click="AddMenuItem_Click"/>
+                </ContextMenu>
+            </Menu.ContextMenu>
+            <MenuItem Name="mailMenuItem" Header="Mail.ru" Padding="5" Margin="0" VerticalContentAlignment="Center" Click="MailMenuItem_Click" />
+            <MenuItem Name="googleMenuItem" Header="Google" Padding="5" Margin="0" VerticalContentAlignment="Center" Click="GoogleMenuItem_Click" />
+        </Menu>
         <WebBrowser Name="webBrowser" />
     </DockPanel>
-    
+
 </Window>
